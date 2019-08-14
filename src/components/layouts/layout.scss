@@ -1,0 +1,104 @@
+.profile {
+  &__name {
+    margin-left: 10px;
+  }
+}
+
+.setting {
+  &__icon {
+
+      cursor: pointer;
+  }
+  &__list {
+
+      position: absolute;
+      z-index: 2;
+      right: 20px;
+      width: 150px;
+      background-color: #d0ece5;
+      padding: 20px 15px;
+      border-radius: 5px;
+      &__item {
+          &:not(:last-child) {
+              margin-bottom: 10px;
+          }
+          a {
+            display: block;
+            padding: 5px;
+            &:hover {
+              background-color: #ddd;
+              color: #fff;
+            }
+          }
+      }
+  }
+}
+// menu
+.menu-bar {
+  width: 200px;
+  height: 100vh;
+  background-color: #DDD;
+}
+.side-bar {
+  &__item {
+      
+      a {
+          display: block;
+          padding: 10px 20px;
+      }
+      :hover {
+          background-color: pink;
+          color: #fff;
+      }
+  }
+}
+.menu-icon {
+  margin-right: 10px;
+  &__bar {
+      position: relative;
+      height: 50px;
+      background-color: #7b8596;
+      text-align: center;
+      a {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      }
+  }
+}
+
+// header
+.header {
+  display: block;
+  width: 100%;
+  height: 70px;
+  background-color: #ddd;
+  padding: 0 20px;
+  &__fold {
+      &:hover {
+          cursor: pointer;
+      }
+  }
+}
+
+// main
+
+.main {
+  
+}
+.content {
+  padding: 30px;
+}
+
+// footer
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 50%;
+  &__copyright {
+      padding-left: 50%;
+      transform: translateX(-50%);
+  }
+}

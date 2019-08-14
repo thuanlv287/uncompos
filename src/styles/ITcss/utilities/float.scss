@@ -1,0 +1,35 @@
+// @include b('u-float') {
+//   @include m('right') {
+//       float: right;
+//   }
+//   @include m('left') {
+//       float: left;
+//   }
+//   @include m('none') {
+//       float: none;
+//   }
+// }
+
+// @include b('u-text') {
+//   @include m('right') {
+//       text-align: right;
+//   }
+//   @include m('left') {
+//       text-align: left;
+//   }
+//   @include m('center') {
+//       text-align: center;
+//   }
+// }
+
+// .clearfix {
+//   &::after,
+//   &::before {
+//       display: block;
+//       content: "";
+//   }
+
+//   &::after {
+//       clear: both;
+//   }
+// }

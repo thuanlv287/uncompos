@@ -1,0 +1,110 @@
+@import '../styles/ITcss/settings/variables.scss';
+.rc {
+    &__menubar {
+        padding: 20px;
+        &__title {
+            border-right: 2px solid #34495e;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 23px;
+            background-color: $base_color;
+        }
+        &__img {
+            background: url('../assets/images/icon-home.png') no-repeat center center;
+            background-size: 100% 100%;
+            width: 60px;
+            height: 60px;
+        }
+        .active {
+            a {
+                color: $white;
+            }
+        }
+    }
+    &__header {
+        position: fixed;
+        top: 0;
+        z-index: 7;
+        width: 100%;
+        height: 70px;
+        background-color: $base_color;
+        padding: 0 20px;
+        &__fold {
+            cursor: pointer;
+        }
+    }
+    &__content {
+        margin-top: 70px;
+        padding: 30px;
+    }
+    &__item {
+        a {
+            padding: 10px;
+            display: block;
+            color: $base_color;
+        }
+    }
+    &__label-title {
+        margin-bottom: 10px;
+    }
+    &__label {
+        text-decoration: underline;
+    }
+    &__box {
+        margin-bottom: 30px;
+        &__content {
+            min-width: 600px;
+            border: 1px solid #61dafb;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        &__guidline {
+            border-top: 1px solid #61dafb;
+            &__icon {
+                display: block;
+                :hover {
+                    cursor: pointer;
+                }
+            }
+            &__content {
+                display: inline-block;
+                background-color: rgba($color: #ddd, $alpha: 0.6);
+                margin-top: 10px;
+                border: 1px solid;
+                border-radius: 4px;
+                padding: 10px 20px;
+            }
+        }
+        button {
+            &:not(:last-child){
+                margin-right: 10px;
+            }
+        }
+    }
+    &__login-form {
+        border: 1px solid $base_color;
+        border-radius: $base_border_radius;
+        padding: 20px;
+    }
+    
+}
+.cl {
+    &--red {
+        color: red;
+    }
+    &--green {
+        color: green;
+    }
+    &--blue {
+        color: blue;
+    }
+    &--yellow {
+        color: orange;
+    }
+}
+
+.sidebar-menu {
+    position: relative !important;
+}
