@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
-import { faHome, faBars } from '@fortawesome/free-solid-svg-icons';
-import { Header, Footer } from '../components/layouts';
-import { Drawer, Button, Menu } from '../components';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Footer } from './layouts';
+import { Menu } from '../components';
 import { rcomponents } from './contants'
 import './r-components.scss';
-import Message from '../components/message'
-import Alert from '../components/alert';
 
 class Sidebar extends Component {
   constructor(props) {
@@ -18,7 +16,7 @@ class Sidebar extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="d-flex flex-column">
+        <div className="rc__side-bar">
           <div className={this.props.isDrawer ? '' : 'd-none'}>
             {this.props.title()}
           </div>
@@ -44,7 +42,7 @@ export default class Components extends Component {
   }
   renderTitle = () => {
     return (
-      <Link to="/rc-components" className="rc__menubar__title">
+      <Link to="/" className="rc__menubar__title">
         <span className="rc__menubar__img" ></span>
       </Link>
     )
@@ -63,11 +61,17 @@ export default class Components extends Component {
       </ul>
     )
   }
-
+  handleDisplayMenubar = () => {
+    if (this.state.isDrawer) {
+      this.rc__wrapped.classList.add('hide-menu-bar')
+    } else {
+      this.rc__wrapped.classList.remove('hide-menu-bar')
+    }
+  }
   render() {
     return (
       <React.Fragment>
-        <div className="d-flex">
+        <div className="rc__wrapped" ref={e => this.rc__wrapped = e}>
           <Sidebar
             title={this.renderTitle}
             isDrawer={this.state.isDrawer}
@@ -79,7 +83,7 @@ export default class Components extends Component {
           >
             {this.renderRcomponent(rcomponents)}
           </Sidebar>
-          <div className="main d-flex flex-column flex-1">
+          <div className="rc__main d-flex flex-column flex-1">
             <div className="rc__header d-flex justify-content--between align-items--center">
               <span className="rc__header__fold">
                 <FontAwesomeIcon
@@ -88,6 +92,7 @@ export default class Components extends Component {
                     this.setState({
                       isDrawer: !this.state.isDrawer,
                     })
+                    this.handleDisplayMenubar()
                   }}
                 />
               </span>

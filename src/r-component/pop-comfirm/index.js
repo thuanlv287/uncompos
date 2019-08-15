@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Button, CheckBox } from '../../components';
+import { Button, CheckBox, PopConfirm } from '../../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faCopy } from '@fortawesome/free-solid-svg-icons';
-import PopConfirm from '../../components/pop-confirm';
 
 export default class RcPopComfirm extends Component {
     constructor(props) {

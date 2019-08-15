@@ -19,7 +19,7 @@ export default class RcSelect extends Component {
                         <div className="p-10">
                             <div className="rc__label mb-10">Basic usage:</div>
                             <div className="d-flex mb-20">
-                                <Select defaultValue={1} >
+                                <Select defaultValue={1}>
                                     <Option value={1}>Option1</Option>
                                     <Option value={2}>Option2</Option>
                                     <Option value={3}>Option3</Option>

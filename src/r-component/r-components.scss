@@ -1,5 +1,16 @@
 @import '../styles/ITcss/settings/variables.scss';
 .rc {
+    &__wrapped {
+        display: flex;
+    }
+    &__side-bar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+    }
+    &__main {
+        margin-left: 200px;
+    }
     &__menubar {
         padding: 20px;
         &__title {
@@ -107,4 +118,14 @@
 
 .sidebar-menu {
     position: relative !important;
+}
+.hide-menu-bar {
+    .rc__main {
+        margin-left: 0;
+    }
+}
+.open-menu-bar {
+    .rc__main {
+        margin-left: 200px;
+    }
 }

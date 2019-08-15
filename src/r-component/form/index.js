@@ -3,9 +3,7 @@ import { Button, CheckBox, Form, InputValidate, InputNumber, InputEmail } from '
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faCopy } from '@fortawesome/free-solid-svg-icons';
 import '../r-components.scss';
-// import { isEmail } from '../../utils/common';
-
-const isEmail = true
+import { isEmail } from '../utils/common';
 
 export default class RcForm extends Component {
     constructor(props) {
@@ -15,7 +13,7 @@ export default class RcForm extends Component {
             isShowRegister: false
         }
     }
-    onSubmit = () => {
+    onSubmit = (event) => {
         event.preventDefault();
         this.checkValidUserName()
         this.checkValidPassword()
@@ -25,7 +23,7 @@ export default class RcForm extends Component {
             this.props.getLogin({ username, password });
         }
     }
-    onSubmit1 = () => {
+    onSubmit1 = (event) => {
         event.preventDefault();
         this.checkValidUserName1()
         this.checkValidPassword1()
@@ -145,7 +143,7 @@ export default class RcForm extends Component {
                                         />
                                     </div>
                                     <div className="d-flex justify-content--center">
-                                        <Button type="submit" className="btn btn__login btn__primary" >Login</Button>
+                                        <Button type="primary" submit className="btn btn__login btn__primary" >Login</Button>
                                     </div>
 
                                 </Form>
@@ -230,7 +228,7 @@ export default class RcForm extends Component {
                                         />
                                     </div>
                                     <div className="d-flex justify-content--center">
-                                        <Button type="submit" className="btn btn__login btn__primary" >Register</Button>
+                                        <Button type="primary" submit className="btn btn__login" >Register</Button>
                                     </div>
 
                                 </Form>

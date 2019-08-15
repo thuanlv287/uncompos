@@ -58,10 +58,6 @@ const rcomponents = [
         name: 'PopConfirms'
     },
     {
-        path: '/rc-components/loadings',
-        name: 'Loadings'
-    },
-    {
         path: '/rc-components/messages',
         name: 'Messages'
     },
@@ -116,10 +112,6 @@ const routeRcomponents = [
     {
         path: '/rc-components/pop-confirms',
         component: RcPopComfirm
-    },
-    {
-        path: '/rc-components/loadings',
-        component: RcLoading
     },
     {
         path: '/rc-components/messages',
