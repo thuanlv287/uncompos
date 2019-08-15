@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { HOCRef } from '../HOC';
+import HOCRef from '../hoc/hoc-ref';
 import './radio.scss';
 
 class Radio extends Component {

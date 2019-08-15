@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './checkbox.scss';
-import { HOCRef } from '../hoc';
+import HOCRef  from '../hoc/hoc-inputs';
 
 
 class Checkbox extends React.PureComponent {

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Input, TextArea, InputValidate, InputEmail, InputNumber, Button, Drawer, message2 } from '../../r-component/index';
 import { isEmail } from '../../utils/common';
-import Message from '../message2';
-import renderWith3s from '../message2';
 
 
 export default class ComponentsLayout extends Component {

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { HOCRef, HOCHoriVertiInput } from '../hoc';
+import HOCRef from '../hoc/hoc-ref';
+import HOCHoriVertiInput from '../hoc/hoc-inputs';
 import { sizes, getBorderColor } from './constant';
 import './input.scss';
 

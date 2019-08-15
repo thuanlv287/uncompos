@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { HOCRef, HOCHoriVertiInput } from '../HOC';
+import HOCRef from '../hoc/hoc-ref';
+import HOCHoriVertiInput from '../hoc/hoc-inputs';
 import './select.scss';
 
 class OptionHOC extends Component {
