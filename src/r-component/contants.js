@@ -10,11 +10,11 @@ import RcModal from './modal';
 import RcDropdown from './dropdown';
 import RcDrawer from './drawer';
 import RcPopComfirm from './pop-comfirm';
-import RcLoading from './loading';
 import RcMessage from './message';
 import RcForm from './form';
 import RcAlert from './alert';
 import RcMenu from './menu';
+import RcTable from './table';
 
 const rcomponents = [
     {
@@ -68,6 +68,10 @@ const rcomponents = [
     {
         path: '/rc-components/menus',
         name: 'Menus'
+    },
+    {
+        path: '/rc-components/tables',
+        name: 'Tables'
     },
     
 ]
@@ -124,6 +128,10 @@ const routeRcomponents = [
     {
         path: '/rc-components/menus',
         component: RcMenu
+    },
+    {
+        path: '/rc-components/tables',
+        component: RcTable
     },
 ]
 

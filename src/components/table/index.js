@@ -24,6 +24,10 @@ class Table extends Component {
             this.selectAll.checked = true;
             this.selectAllWrapped.classList.remove('checkbox--half-past');
         }
+        if(this.rowSelected.length === 0) {
+            this.selectAll.checked = false;
+            this.selectAllWrapped.classList.remove('checkbox--half-past');
+        }
         this.rowSelected = this.rowSelected.filter(item => !item.isDisabledRecord)
         this.props.select.onSelect(this.rowSelected, indexData);
     }
