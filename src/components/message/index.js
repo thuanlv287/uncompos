@@ -53,7 +53,7 @@ class Message extends React.PureComponent {
         const styleType = types[type] || 'message--info';
 
         return (
-            <div className={classNames('message slide-bottom', className)} {...otherProps}>
+            <div className={classNames('message slide-top', className)} {...otherProps}>
                 <div className={classNames("message__content", { [styleType]: true })}>
                     {message}
                 </div>

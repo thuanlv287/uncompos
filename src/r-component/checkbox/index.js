@@ -17,7 +17,6 @@ export default class RcCheckBox extends Component {
         alert('Do something !')
     }
     onChange = () => {
-        console.log('this.checkbox: ', this.inputCheck.checked);
     }
     render() {
         return (

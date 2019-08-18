@@ -56,7 +56,7 @@ export default class Alert extends React.PureComponent {
         } = this.props;
         const styleType = types[type] || 'alert--info';
         return (
-            <div className={classNames('alert slide-bottom', className)}>
+            <div className={classNames('alert slide-top', className)}>
                 <div
                     {...otherProps}
                     className={classNames(

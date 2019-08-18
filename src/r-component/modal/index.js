@@ -13,7 +13,6 @@ export default class RcModal extends Component {
         }
     }
     render() {
-        console.log('isShowModalLoading: ', this.state.isShowModalLoading);
         return (
             <React.Fragment>
                 <h1 className="rc__label-title">Modal types</h1>

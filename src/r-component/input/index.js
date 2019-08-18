@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faCopy, faSign, faSmile, faInfo, faMailBulk, faUser, faSortNumericDown, faLink } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faCopy, faSmile, faInfo, faMailBulk, faUser, faSortNumericDown, faLink } from '@fortawesome/free-solid-svg-icons';
 import { Input, TextArea, InputValidate, InputNumber, InputEmail, InputUrl } from '../../components';
 import { isEmail, isURL } from '../utils/common';
 
@@ -16,7 +16,6 @@ export default class RcInput extends Component {
     }
     checkValidPassword1 = () => {
         this.setMessage(this.password1, 'requirePassword1');
-        console.log('value input: ', this.password1.value)
     }
     setMessage = (element, key, message = 'Điền vào nè') => {
         if (!element.value.trim()) {
@@ -92,7 +91,6 @@ export default class RcInput extends Component {
         if (!element || !element.value.trim()) {
             this.setMessage(this.url, 'messageUrlRequire');
         } else {
-            console.log('aa');
             if (!isURL(element.value.trim())) {
                 this.setMessageUrl(this.url, 'messageUrlRequire');
             }
@@ -318,7 +316,7 @@ export default class RcInput extends Component {
                                     type="password"
                                     name="password"
                                     className="customize"
-                                    size="large"
+                                    placeholder="input validation"
                                     ref={(element) => this.password1 = element}
                                     onChange={this.checkValidPassword1}
                                     messageRequire={this.state.requirePassword1}
@@ -330,7 +328,7 @@ export default class RcInput extends Component {
                             <span className="rc__box__guidline__icon">
                                 <FontAwesomeIcon
                                     icon={faCode}
-                                    onClick={() => this.setState({ isShowTextarea: !this.state.isShowTextarea })}
+                                    onClick={() => this.setState({ isShowInputValidate: !this.state.isShowInputValidate })}
                                     className="mr-10"
                                 />
                                 <FontAwesomeIcon
@@ -338,10 +336,10 @@ export default class RcInput extends Component {
                                 />
                             </span>
                             {
-                                this.state.isShowTextarea && (
+                                this.state.isShowInputValidate && (
                                     <pre className="rc__box__guidline__content">
                                         <code data-lang="html">
-                                            <span>&lt;<span className="cl--red">TextArea</span><span className="cl--green"> placeholder</span>=<span className="cl--blue">"Text area"</span> /&gt;</span>
+                                            <span>&lt;<span className="cl--red">Input</span> <br /> <span className="cl--green">suffix</span>=<span><span>&#123;</span><span>&#40;</span><span>&#41;</span>=><span>&#40;</span><span>&lt;<span className="cl--red">Icon</span> /&gt;</span><span>&#41;</span><span>&#125;</span></span> <br /> <span className="cl--green">prefix</span>=<span><span>&#123;</span><span>&#40;</span><span>&#41;</span>=><span>&#40;</span><span>&lt;<span className="cl--red">Icon</span> /&gt;</span><span>&#41;</span><span>&#125;</span></span><br /> <span className="cl--green">placeholder</span>=<span className="cl--blue">"input validation"</span><br />/&gt;</span>
                                             <br />
                                         </code>
                                     </pre>
@@ -357,16 +355,8 @@ export default class RcInput extends Component {
                             <div className="d-flex mb-20">
 
                                 <InputEmail
-                                    suffix={() => (<FontAwesomeIcon
-                                        icon={faMailBulk}
-                                    />)}
-                                    prefix={() => (<FontAwesomeIcon
-                                        icon={faUser}
-                                    />)}
-                                    name="password"
-                                    className="customize"
-                                    size="large"
-
+                                    name="Email"
+                                    placeholder="Your email"
                                     ref={e => this.emailValue = e}
                                     onChange={() => this.checkInvalidInputEmail(this.emailValue)}
                                     messageEmailRequire={this.state.messageEmailRequire}
@@ -378,7 +368,7 @@ export default class RcInput extends Component {
                             <span className="rc__box__guidline__icon">
                                 <FontAwesomeIcon
                                     icon={faCode}
-                                    onClick={() => this.setState({ isShowTextarea: !this.state.isShowTextarea })}
+                                    onClick={() => this.setState({ isShowInputEmail: !this.state.isShowInputEmail })}
                                     className="mr-10"
                                 />
                                 <FontAwesomeIcon
@@ -386,13 +376,28 @@ export default class RcInput extends Component {
                                 />
                             </span>
                             {
-                                this.state.isShowTextarea && (
-                                    <pre className="rc__box__guidline__content">
-                                        <code data-lang="html">
-                                            <span>&lt;<span className="cl--red">TextArea</span><span className="cl--green"> placeholder</span>=<span className="cl--blue">"Text area"</span> /&gt;</span>
-                                            <br />
-                                        </code>
-                                    </pre>
+                                this.state.isShowInputEmail && (
+                                    <div>
+                                        <pre className="rc__box__guidline__content">
+                                            <code data-lang="html">
+                                                <span>
+                                                    &lt;
+                                                <span className="cl--red">InputEmail</span>
+                                                    <br /> <span className="cl--green"> placeholder</span>=<span className="cl--blue">"Your email"</span>
+                                                    <br /> <span className="cl--green"> ref</span>=<span><span>&#123;event</span> => <span>this.emailValue = event&#125;</span></span>
+                                                    <br /> <span className="cl--green"> onChange</span>=<span><span>&#123;<span>&#40;</span><span>&#41;</span></span> => <span>this.checkInvalidInputEmail<span>&#40;</span>this.emailValue<span>&#41;</span>&#125;</span></span>
+                                                    <br /> <span className="cl--green"> messageEmailRequire</span>=<span><span>&#123;this.state.messageEmailRequire&#125;</span></span>
+                                                    <br />/&gt;
+                                                </span>
+                                                <br />
+                                            </code>
+                                        </pre>
+                                        <div>
+                                            <label>Notes:</label>
+                                            <p>- checkInvalidInputEmail: function check string is Email patern</p>
+                                            <p>- messageEmailRequire: state require</p>
+                                        </div>
+                                    </div>
                                 )
                             }
                         </div>
@@ -405,18 +410,10 @@ export default class RcInput extends Component {
                             <div className="d-flex mb-20">
 
                                 <InputNumber
-                                    suffix={() => (<FontAwesomeIcon
-                                        icon={faMailBulk}
-                                    />)}
-                                    prefix={() => (<FontAwesomeIcon
-                                        icon={faSortNumericDown}
-                                    />)}
                                     label="Number"
                                     vertical
-                                    className="customize"
-                                    size="large"
-
                                     ref={e => this.numberValue = e}
+                                    placeholder="Your number"
                                     onChange={() => this.checkInvalidInputNumber(this.numberValue)}
                                     messageNumberRequire={this.state.messageNumberRequire}
                                 />
@@ -427,7 +424,7 @@ export default class RcInput extends Component {
                             <span className="rc__box__guidline__icon">
                                 <FontAwesomeIcon
                                     icon={faCode}
-                                    onClick={() => this.setState({ isShowTextarea: !this.state.isShowTextarea })}
+                                    onClick={() => this.setState({ isShowInputNumber: !this.state.isShowInputNumber })}
                                     className="mr-10"
                                 />
                                 <FontAwesomeIcon
@@ -435,13 +432,28 @@ export default class RcInput extends Component {
                                 />
                             </span>
                             {
-                                this.state.isShowTextarea && (
-                                    <pre className="rc__box__guidline__content">
-                                        <code data-lang="html">
-                                            <span>&lt;<span className="cl--red">TextArea</span><span className="cl--green"> placeholder</span>=<span className="cl--blue">"Text area"</span> /&gt;</span>
-                                            <br />
-                                        </code>
-                                    </pre>
+                                this.state.isShowInputNumber && (
+                                    <div>
+                                        <pre className="rc__box__guidline__content">
+                                            <code data-lang="html">
+                                                <span>
+                                                    &lt;
+                                                <span className="cl--red">InputNumber</span>
+                                                    <br /> <span className="cl--green"> placeholder</span>=<span className="cl--blue">"Your number"</span>
+                                                    <br /> <span className="cl--green"> ref</span>=<span><span>&#123;event</span> => <span>this.numberValue = event&#125;</span></span>
+                                                    <br /> <span className="cl--green"> onChange</span>=<span><span>&#123;<span>&#40;</span><span>&#41;</span></span> => <span>this.checkInvalidInputNumber<span>&#40;</span>this.numberValue<span>&#41;</span>&#125;</span></span>
+                                                    <br /> <span className="cl--green"> messageNumberRequire</span>=<span><span>&#123;this.state.messageNumberRequire&#125;</span></span>
+                                                    <br />/&gt;
+                                                </span>
+                                                <br />
+                                            </code>
+                                        </pre>
+                                        <div>
+                                            <label>Notes:</label>
+                                            <p>- checkInvalidInputNumber: function check string is Number patern</p>
+                                            <p>- messageNumberRequire: state require</p>
+                                        </div>
+                                    </div>
                                 )
                             }
                         </div>
@@ -454,16 +466,11 @@ export default class RcInput extends Component {
                             <div className="d-flex mb-20">
 
                                 <InputUrl
-                                    suffix={() => (<FontAwesomeIcon
-                                        icon={faLink}
-                                    />)}
-                                    prefix={() => (<FontAwesomeIcon
-                                        icon={faSortNumericDown}
-                                    />)}
                                     label="Url"
                                     vertical
                                     className="customize"
                                     size="large"
+                                    placeholder="Your url"
 
                                     ref={e => this.url = e}
                                     onChange={() => this.checkInvalidUrl(this.url)}
@@ -476,7 +483,7 @@ export default class RcInput extends Component {
                             <span className="rc__box__guidline__icon">
                                 <FontAwesomeIcon
                                     icon={faCode}
-                                    onClick={() => this.setState({ isShowTextarea: !this.state.isShowTextarea })}
+                                    onClick={() => this.setState({ isShowisShowUrl: !this.state.isShowisShowUrl })}
                                     className="mr-10"
                                 />
                                 <FontAwesomeIcon
@@ -484,13 +491,28 @@ export default class RcInput extends Component {
                                 />
                             </span>
                             {
-                                this.state.isShowTextarea && (
-                                    <pre className="rc__box__guidline__content">
-                                        <code data-lang="html">
-                                            <span>&lt;<span className="cl--red">TextArea</span><span className="cl--green"> placeholder</span>=<span className="cl--blue">"Text area"</span> /&gt;</span>
-                                            <br />
-                                        </code>
-                                    </pre>
+                                this.state.isShowisShowUrl && (
+                                    <div>
+                                        <pre className="rc__box__guidline__content">
+                                            <code data-lang="html">
+                                                <span>
+                                                    &lt;
+                                                <span className="cl--red">InputUrl</span>
+                                                    <br /> <span className="cl--green"> placeholder</span>=<span className="cl--blue">"Your url"</span>
+                                                    <br /> <span className="cl--green"> ref</span>=<span><span>&#123;event</span> => <span>this.url = event&#125;</span></span>
+                                                    <br /> <span className="cl--green"> onChange</span>=<span><span>&#123;<span>&#40;</span><span>&#41;</span></span> => <span>this.checkInvalidUrl<span>&#40;</span>this.url<span>&#41;</span>&#125;</span></span>
+                                                    <br /> <span className="cl--green"> messageUrlRequire</span>=<span><span>&#123;this.state.messageUrlRequire&#125;</span></span>
+                                                    <br />/&gt;
+                                                </span>
+                                                <br />
+                                            </code>
+                                        </pre>
+                                        <div>
+                                            <label>Notes:</label>
+                                            <p>- checkInvalidUrl: function check string is Url patern</p>
+                                            <p>- messageUrlRequire: state require</p>
+                                        </div>
+                                    </div>
                                 )
                             }
                         </div>

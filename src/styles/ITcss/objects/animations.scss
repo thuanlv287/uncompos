@@ -32,7 +32,7 @@
     animation: slide-top .3s ease-out;
 }
 .slide-bottom {
-    animation: slide-top .3s ease-out;
+    animation: slide-bottom .3s ease-out;
 }
 
 @keyframes slide-down {
@@ -44,16 +44,16 @@
   100% { opacity: 1; -webkit-transform: translateX(0); }
 }
 @keyframes slide-right {
-    0% { opacity: 0; -webkit-transform: translate(100%, -100%); }   
-  100% { opacity: 1; -webkit-transform: translate(0, 0); }
+    0% { opacity: 0; -webkit-transform: translate(100%); }   
+  100% { opacity: 1; -webkit-transform: translate(0); }
 }
 @keyframes slide-top {
     0% { opacity: 0; -webkit-transform: translateY(-100%); }   
     100% { opacity: 1; -webkit-transform: translateY(0); }
 }
 @keyframes slide-bottom {
-    0% { opacity: 0; -webkit-transform: translate(0,0); }   
-    100% { opacity: 1; -webkit-transform: translate(-100%, 100%); }
+    0% { opacity: 0; -webkit-transform: translateY(100%); }   
+    100% { opacity: 1; -webkit-transform: translateY(0); }
 }
 
 

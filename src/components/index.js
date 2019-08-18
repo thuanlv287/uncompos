@@ -13,11 +13,9 @@ import Table from './table';
 import Select, { Option } from './select';
 import Menu from './menu';
 import PopConfirm from './pop-confirm';
-import { LayoutView } from './layouts';
 
 // export
 export {
-  LayoutView,
   Form,
   Input,
   InputValidate,
