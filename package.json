@@ -1,7 +1,7 @@
 {
   "name": "uncompos",
   "version": "1.0.0",
-  "description": "Library UI React",
+  "description": "A little library UI React",
   "main": "src/index.js",
   "scripts": {
     "build:lib": "webpack --config webpack.config.build.js",
