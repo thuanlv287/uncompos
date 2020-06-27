@@ -1,3 +1,6 @@
+This is react components create by my me.
+
 Refer to: https://uncompos.firebaseapp.com/
 
-This is react components create by my me.
+Install: 
+$ npm install uncompos
